@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getData } from "../Redux/AppReducer/action";
 import { Link, useLocation, useSearchParams } from "react-router-dom";
 import Filter from "../components/Filter";
+import { FilterSlider } from "../components/FilterSlider";
 
 const Women = () => {
   const { data } = useSelector((store) => store.AppReducer);
@@ -69,7 +70,7 @@ const Women = () => {
   
   return (
     <Flex mt={windowDimensions.width>920 && "8rem"}>
-      <Filter/>
+      <FilterSlider/>
 
       <Grid templateColumns={['repeat(1, 1fr)','repeat(2, 1fr)','repeat(4, 1fr)']} gap={['3rem','3rem','5rem']} m="2rem 2rem">
         {data?.map(el=>(
