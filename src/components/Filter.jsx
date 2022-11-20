@@ -1,4 +1,4 @@
-import { Box, Checkbox, Flex, Radio, RadioGroup, Text } from '@chakra-ui/react'
+import { Box, Checkbox, Flex, Radio, RadioGroup, Spacer, Text, VStack } from '@chakra-ui/react'
 import React from 'react'
 import { useState } from 'react';
 import { useEffect } from 'react';
@@ -48,9 +48,10 @@ const Filter = () => {
     }
   return (
     <Box h={"100%"}  mt={['1rem','2rem','2rem']} >
-    <Text>Categories</Text>
-     <Flex  direction="column" p={['0.5rem','1rem','1.5rem']}> 
-      {/* border={"1px solid red"} */}
+    <Text as="b" color={"gray"}>Categories</Text>
+     <Flex  direction="column" p={['0.5rem','1rem','1.5rem']} > 
+     
+     
       {filter?.map((el,i)=>(
          
          
@@ -64,16 +65,16 @@ const Filter = () => {
     
     <Flex  direction="column" p={"1rem"} mt="1rem">
     {/* border={"1px solid red"} */}
-        <Text>Filter by price</Text>
+        <Text as="b" color={"gray"}>Filter by price</Text>
 
 <RadioGroup defaultValue='1'>
-  <Stack>
+  <VStack>
     <Radio value='100 500' onChange={handlePrice} >
       100-500
     </Radio>
     <Radio value='501 1000' onChange={handlePrice}>501-1000</Radio>
     <Radio value='1001 1500' onChange={handlePrice}>1001-1500</Radio>
-  </Stack>
+  </VStack>
 </RadioGroup>
 
 
