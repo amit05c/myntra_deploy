@@ -1,6 +1,6 @@
 import { Box, BreadcrumbLink, Divider, FormControl, FormLabel, Heading, Input, InputGroup, InputRightElement, Link, Stack, Breadcrumb, BreadcrumbItem, Button, useToast  } from '@chakra-ui/react'
 import React, { useState } from 'react'
-// import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
+import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import { useDispatch,useSelector } from 'react-redux';
 import { login} from '../Redux/AuthReducer/action';
 import { LOGIN_SUCCESS } from '../Redux/AuthReducer/action.type';
@@ -12,6 +12,7 @@ const initialState = {
 };
 const Login = () => {
   const [data,setData]= useState(initialState)
+  const [showPassword,setShowPassword]= useState(false)
   const state= useSelector((state)=>state.AuthReducer)
   const toast = useToast()
   const dispatch= useDispatch()
@@ -136,7 +137,7 @@ const Login = () => {
               <FormLabel fontWeight="hairline">Password</FormLabel>
               <InputGroup>
               <Input
-                // type={showPassword ? "text" : "password"}
+                type={showPassword ? "text" : "password"}
                 value={data.password}
                 
                 name="password"
@@ -145,11 +146,11 @@ const Login = () => {
               <InputRightElement h={"full"}>
                 <Button
                   variant={"ghost"}
-                  // onClick={() =>
-                  //   setShowPassword((showPassword) => !showPassword)
-                  // }
+                  onClick={() =>
+                    setShowPassword((showPassword) => !showPassword)
+                  }
                 >
-                  {/* {showPassword ? <ViewIcon /> : <ViewOffIcon />} */}
+                  {showPassword ? <ViewIcon /> : <ViewOffIcon />}
                 </Button>
               </InputRightElement>
             </InputGroup>
@@ -157,7 +158,7 @@ const Login = () => {
           </Box>
         </Stack>
         <Box paddingTop="26px">
-          Already a user?{" "}
+          Create account?{" "}
           <Link color="teal.500" href="/signup">
             Sign Up
           </Link>
