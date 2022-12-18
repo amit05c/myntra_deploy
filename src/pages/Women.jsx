@@ -1,4 +1,4 @@
-import { Box, Checkbox, Flex, Grid, GridItem, Image, Text,Button } from "@chakra-ui/react";
+import { Box, Checkbox, Flex, Grid, GridItem, Image, Text,Button,Spinner } from "@chakra-ui/react";
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
@@ -70,7 +70,8 @@ const Women = () => {
   
   return (
     <Flex mt={windowDimensions.width>920 && "8rem"}>
-      <FilterSlider/>
+      {data.length>0 ? <>
+        <FilterSlider/>
 
       <Grid templateColumns={['repeat(1, 1fr)','repeat(2, 1fr)','repeat(4, 1fr)']} gap={['3rem','3rem','5rem']} m="2rem 2rem">
         {data?.map(el=>(
@@ -89,6 +90,15 @@ const Women = () => {
           </GridItem>
         ))}
       </Grid>
+      </> : <Spinner
+  thickness='4px'
+  speed='0.65s'
+  emptyColor='gray.200'
+  color='blue.500'
+  size='xl'
+  m="auto"
+/>}
+     
     </Flex>
   );
 };

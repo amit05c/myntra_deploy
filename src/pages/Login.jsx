@@ -1,12 +1,11 @@
 import { Box, BreadcrumbLink, Divider, FormControl, FormLabel, Heading, Input, InputGroup, InputRightElement, Link, Stack, Breadcrumb, BreadcrumbItem, Button, useToast  } from '@chakra-ui/react'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
 import { useDispatch,useSelector } from 'react-redux';
 import { login} from '../Redux/AuthReducer/action';
 import { LOGIN_SUCCESS } from '../Redux/AuthReducer/action.type';
 import { useNavigate } from 'react-router-dom';
 const initialState = {
-  name: "",
   email: "",
   password: ""
 };
@@ -27,7 +26,7 @@ const Login = () => {
   }
 
   const loginHandler= ()=>{
-    // console.log(data)
+    console.log(data)
     dispatch(login(data))
     .then(res=>{
       // console.log(res)
@@ -52,6 +51,14 @@ const Login = () => {
       }
     })
   }
+
+  useEffect(() => {
+    let isAuth = localStorage.getItem('token')
+    if(isAuth & isAuth !== 'undefined') {
+       navigate("/")
+    }
+ }, [])
+
   return (
     <Box  bg="#ffffff" 
     // w={['60%','40%','30%']}
