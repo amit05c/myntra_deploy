@@ -104,7 +104,7 @@ function getWindowDimensions() {
         {/* <GiEternalLove className={styles.logo}  /> */}
 
         <IconContext.Provider value={{ size:'2em' }}>
-  <div>
+  <div style={{color: "red"}}>
     <GiEternalLove cursor={"pointer"} />
   </div>
 </IconContext.Provider>
@@ -115,7 +115,7 @@ function getWindowDimensions() {
         {/* <BsBagCheck className={styles.logo} /> */}
         <IconContext.Provider value={{ size:'2em' }}>
   <div>
-    <BsBagCheck cursor={"pointer"} onClick={()=>{isAuth ? navigate("/cart"): alert("Please login first")}}/>
+    <BsBagCheck style={{color: "blueviolet"}} cursor={"pointer"} onClick={()=>{isAuth ? navigate("/cart"): alert("Please login first")}}/>
   </div>
 </IconContext.Provider>
       <Text>Bag</Text>

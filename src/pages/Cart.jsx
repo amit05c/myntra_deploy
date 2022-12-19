@@ -59,10 +59,11 @@ const Cart = () => {
   
   return (
     <Box mt={windowDimensions.width>920 && "8rem"}>
+        {data.length>0 ? <Box ><Text as="b" color={"red.900"}>{`Total: ${total}`}</Text></Box> : <Text as="b" color={"red.900"}>{`Cart Empty`}</Text> }
      {data?.map(el=>(
-      <Box key={el._id}>
+      <Box key={el._id} >
         <Flex justifyContent={"space-around"} mt="1rem" shadow={"rgba(0, 0, 0, 0.16) 0px 1px 4px"} alignItems="center">
-          <Image src={el.image_url[0]} w={['50px', '80px', '100px' ]}/>
+          <Image src={el.image_url[0]} w={['50px', '80px', '100px' ]} p="1rem" />
           <Box color={"gray"}>{`Rate: ${el.rate}`}</Box>
           <Box color={"gray"}>{`Qty: ${el.qty}`}</Box>
           <Box color={"red.300"}>{`Price: ${el.price}`}</Box>
@@ -70,8 +71,8 @@ const Cart = () => {
           </Flex>
           </Box>
           ))}
-       {data.length>0 ? <Box ><Text as="b" color={"red.900"}>{`Total: ${total}`}</Text></Box> : <Text as="b" color={"red.900"}>{`Cart Empty`}</Text> }   
-         {data.length >0 && <Button bg={"black"} color={"white"} onClick={handlePay}>Pay now</Button>} 
+       {/* {data.length>0 ? <Box ><Text as="b" color={"red.900"}>{`Total: ${total}`}</Text></Box> : <Text as="b" color={"red.900"}>{`Cart Empty`}</Text> }    */}
+         {data.length >0 && <Button bg={"black"} mt="1rem" color={"white"} onClick={handlePay}>Pay now</Button>} 
     </Box>
   )
 }
