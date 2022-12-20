@@ -251,6 +251,7 @@ const ProductDetails = () => {
         ml="1rem"
         padding={['0.1rem','0.25rem','0.5rem']}
         justifyContent="space-between"
+        alignItems={"center"}
        >
         <Button borderRadius="50%" bg={"#7d7d7d"} disabled={qty==1} onClick={()=>setQty(qty-1)}>-</Button>
         <Text as="b" color={"red.500"}>{qty}</Text>

@@ -13,6 +13,7 @@ const Filter = ({filter}) => {
     const { data } = useSelector((store) => store.AppReducer);
     const location = useLocation()
     let initialitem= searchParams.getAll("item") || []
+    // let initialPrice= searchParams.getAll("price") || []
     console.log(location)
     // const [filter,setFilter]= useState([])
     const [item,setItem]= useState(initialitem)
@@ -43,7 +44,7 @@ const Filter = ({filter}) => {
 // console.log(filter)
   
     const handleChange= (e)=>{
-      let newItem= e.target.value
+      let newItem= e.target.value  // [kurta,top]
       if(item.includes(newItem)){
      let updatedItem= item.filter(el=>el!=newItem)
      setItem(updatedItem)
@@ -56,6 +57,7 @@ const Filter = ({filter}) => {
           let x=e.target.value.split(" ").map(Number)
           setPrice(x)
     }
+    console.log(price)
   return (
     <Box h={"100%"}  mt={['1rem','2rem','2rem']}>
     <Text as="b" color={"gray"}>Categories</Text>
@@ -81,7 +83,7 @@ const Filter = ({filter}) => {
       100-500
     </Radio>
     <Radio value='501 1000' onChange={handlePrice}>501-1000</Radio>
-    <Radio value='1001 1500' onChange={handlePrice}>1001-1500</Radio>
+    <Radio value='1001 1500'  onChange={handlePrice}>1001-1500</Radio>
   </VStack>
 </RadioGroup>
 

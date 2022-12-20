@@ -114,7 +114,7 @@ function getWindowDimensions() {
      </GridItem>
 
      <GridItem>
-     <Link to="/men?item=T-Shirt">
+     <Link to="/men?item=Kurtas">
       <Image src={c3} alt=""  />
         </Link>
      </GridItem>
@@ -132,13 +132,13 @@ function getWindowDimensions() {
      </GridItem>
 
      <GridItem>
-     <Link to="/women?item=Tops">
+     <Link to="/men?item=Shirt">
       <Image src={c6} alt=""  />
         </Link>
      </GridItem>
 
      <GridItem>
-     <Link to="/women?item=Tops">
+     <Link to="/women?item=Jewellery">
       <Image src={c7} alt=""  />
         </Link>
      </GridItem>
@@ -162,7 +162,7 @@ function getWindowDimensions() {
      </GridItem>
 
      <GridItem>
-     <Link to="/women?item=Tops">
+     <Link to="/men?item=Jeans">
       <Image src={c11} alt=""  />
         </Link>
      </GridItem>
