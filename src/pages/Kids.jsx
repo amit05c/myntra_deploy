@@ -11,7 +11,7 @@ import { FilterSlider } from "../components/FilterSlider";
 const Kids = () => {
   const { data } = useSelector((store) => store.AppReducer);
   const [searchParams]= useSearchParams()
-  const filter =["Shirt","T-Shirt"]
+  const filter =["Shirt","T-Shirt","Tops"]
 const location= useLocation()
 
   const dispatch = useDispatch();
@@ -44,7 +44,7 @@ const location= useLocation()
     if(item.length>0 || price.length>0){
       const queryParams={
         params:{
-           category:['men'],
+           category:['kids'],
            item:item,
            price:price
         }

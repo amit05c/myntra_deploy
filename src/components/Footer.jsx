@@ -24,8 +24,8 @@ const FooterPart = () => {
               Sign Up For Email{" "}
             </h1>
             <p>
-              Receive early access to new arrivals, sales,exclusive
-              content,events and much more!
+              Receive early access to new arrivals, sales, exclusive
+              content, events and much more!
             </p>
           </Box>
           <Spacer />
@@ -61,7 +61,7 @@ const FooterPart = () => {
         <p
           style={{
             textAlign: "start",
-            fontSize: "12px",
+            // fontSize: "12px",
             marginLeft: "12px",
             marginTop: "26px",
           }}
@@ -85,7 +85,8 @@ const FooterPart = () => {
           // }}
           // display={"flex"}
           // direction={['column','row',"row"]}
-          gridTemplateColumns={['repeat(2,1fr)','repeat(3,1fr)', 'repeat(4,1fr)']}
+          gridTemplateColumns={['repeat(2,1fr)','repeat(3,1fr)', 'repeat(5,1fr)']}
+          gap={['2rem','1rem','1rem']}
         >
           <div>
             <div>
@@ -215,9 +216,10 @@ const FooterPart = () => {
           </div>
         </Grid>
       </Box>
-      <Box margin="auto" w="93%" p={4}>
-        <div style={{ display: "flex", marginTop: "50px" }}>
-          <div
+      <Box margin="auto" w="93%" p={4} >
+        {/* <div style={{ display: "flex", marginTop: "50px", border: "1px solid red", justifyContent: "center"}}> */}
+
+          {/* <div
             className={styles.help}
             style={{
               height: "50px",
@@ -227,55 +229,62 @@ const FooterPart = () => {
               marginLeft: "350px",
               marginRight: "25px",
             }}
-          >
-            <div style={{ display: "flex" }}>
+          > */}
+            <div style={{ display: "flex",margin: "auto", justifyContent: "center" , gap: "2rem",alignItems: "center"}}>
               <div>
                 <BsApple
                   className={styles.help}
-                  size="2rem"
-                  style={{ marginTop: "7px" }}
+                  size={'3rem'}
+                  color= "#167a92"
+                  // style={{ marginTop: "7px" }}
                 />
               </div>
-              <div>
+
+              {/* <div>
                 <p style={{ fontSize: "8px", marginTop: "9px" }}>
                   Download on the
                 </p>
                 <h1 style={{ fontSize: "13px", fontWeight: 700 }}>App Store</h1>
-              </div>
-            </div>
-          </div>
+              </div> */}
+
+            {/* </div> */}
+          {/* </div> */}
+
           <div>
             <BsInstagram
               className={styles.help}
               style={{
                 color: "#167a92",
-                marginRight: "25px",
+                // marginRight: "25px",
               }}
-              size="3rem"
+              size="2.8rem"
             />
           </div>
+
           <div>
             <AiFillFacebook
               className={styles.help}
               style={{
                 color: "#167a92",
-                marginRight: "25px",
+                // marginRight: "25px",
               }}
               size="3rem"
             />
           </div>
+
           <div>
             <AiOutlineTwitter
               className={styles.help}
-              style={{
-                color: "#167a92",
-                marginRight: "25px",
-              }}
+              
+                color= "#167a92"
+        
               size="3rem"
             />
           </div>
+
         </div>
       </Box>
+
       <Box w="93%" p={4} margin="auto">
         <img
           className={styles.help}
@@ -283,7 +292,9 @@ const FooterPart = () => {
           alt="footerimg"
         />
       </Box>
-      <Box w="100%" p={4}>
+
+
+      <Box w="100%" p={4} >
         <div
           style={{
             display: "flex",
@@ -310,7 +321,8 @@ const FooterPart = () => {
           </div>
         </div>
       </Box>
-      <Box margin="auto" w="93%" p={4}>
+
+      <Flex margin="auto" w="93%" p={4}>
         <div
           style={{
             display: "flex",
@@ -357,7 +369,7 @@ const FooterPart = () => {
             2022 URBN.com. All Rights Reserved.
           </div>
         </div>
-      </Box>
+      </Flex>
     </div>
   );
 };
