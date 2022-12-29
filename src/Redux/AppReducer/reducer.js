@@ -11,7 +11,7 @@ export const reducer= (state=initialVal,action)=>{
     switch(type){
         case GET_REQUEST:{
             return {
-                ...state,
+                ...state,  
                 isLoading: true
             }
         }

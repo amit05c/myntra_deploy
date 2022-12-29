@@ -102,7 +102,7 @@ const ProductDetails = () => {
     // console.log(newData)
     
     if(selectSize!=="" && token){
-      await axios.post(`https://myntraserver-production.up.railway.app/cart/add/${id}`,newData,{
+      await axios.post(`https://odd-jade-fawn-toga.cyclic.app/cart/add/${id}`,newData,{
         headers:{authorization: `bear ${token}`},  //authorization
       },)
     //   .then(()=>dispatch(getCartData()))
